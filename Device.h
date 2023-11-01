@@ -3,14 +3,15 @@
 
 #include <string>
 
-class Device 
+class Device
 {
+public:
     virtual ~Device() {}
     // Returns device name
-    virtual std::string getName() const = 0;
+    virtual std::string getName() = 0;
     /* Simulates data reading
     Returns data */
-    virtual std::string getDataAsString() const = 0;
+    virtual std::string getDataAsString() = 0;
 };
 
 #endif

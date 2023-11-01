@@ -4,6 +4,8 @@
 #include "EventQueue.h"
 #include "Device.h"
 
+class DataEvent;
+
 class Parser
 {
 public:

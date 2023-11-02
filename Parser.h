@@ -4,8 +4,6 @@
 #include "EventQueue.h"
 #include "Device.h"
 
-class DataEvent;
-
 class Parser
 {
 public:
@@ -27,7 +25,6 @@ public:
     void run(size_t loop_count_A, size_t loop_count_B,
     int crush_index_A = -1, int crush_index_B = -1);
 
-// Not sure read-function should be private
 private:
    /* Function reads data from device
     * param device - smart-pointer to the device

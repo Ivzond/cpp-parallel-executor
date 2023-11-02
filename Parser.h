@@ -25,7 +25,7 @@ public:
     * param crush_index_B - integer, which shows number of iteration, when Device B will stop working
     */
     void run(size_t loop_count_A, size_t loop_count_B,
-    int crush_index_A = -1, int crusj_index_B = -1);
+    int crush_index_A = -1, int crush_index_B = -1);
 
 // Not sure read-function should be private
 private:

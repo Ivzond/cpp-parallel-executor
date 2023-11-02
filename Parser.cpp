@@ -1,6 +1,7 @@
 #include "Parser.h"
 #include "StartedEvent.h"
 #include "WorkDoneEvent.h"
+#include "DataEvent.h"
 #include <thread>
 
 // Strange, but include iostream supposed to be here(watch read-function, first "if")

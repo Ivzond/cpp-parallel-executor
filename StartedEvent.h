@@ -1,5 +1,5 @@
 #ifndef STARTEDEVENT_H
-#define STARTEDEBENT_H
+#define STARTEDEVENT_H
 
 #include "DeviceEvent.h"
 

@@ -1,0 +1,13 @@
+# ninja log v5
+100	1631	1698939207817628531	CMakeFiles/ivzond.dir/StartedEvent.cpp.o	2b8c2e56a2315ee8
+20	1637	1698939207827249794	CMakeFiles/ivzond.dir/DeviceA.cpp.o	de23ab08dbe3ea67
+24	1641	1698939207824654988	CMakeFiles/ivzond.dir/DeviceB.cpp.o	abb6d6675f4571a0
+43	1642	1698939207816418440	CMakeFiles/ivzond.dir/DeviceEvent.cpp.o	c68ac0249ca85428
+51	1796	1698939207925641733	CMakeFiles/ivzond.dir/EventQueue.cpp.o	76304c9d4395f01d
+0	1929	1698939208104151213	CMakeFiles/ivzond.dir/DataEvent.cpp.o	a67925a1ac2b9f85
+61	1953	1698939208137029859	CMakeFiles/ivzond.dir/main.cpp.o	e9f023566323c87
+89	2006	1698939208205859712	CMakeFiles/ivzond.dir/Parser.cpp.o	7b3948be5cc04f0d
+1633	2312	1698939208512307009	CMakeFiles/ivzond.dir/WorkDoneEvent.cpp.o	d33e2285ae5ba81d
+2312	2533	1698939208737632133	ivzond	3a34c619fff118e7
+7	1156	1698939242173654036	CMakeFiles/ivzond.dir/main.cpp.o	e9f023566323c87
+1157	1323	1698939242351684097	ivzond	3a34c619fff118e7

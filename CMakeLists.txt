@@ -1,9 +1,27 @@
-cmake_minimum_required(VERSION 3.15.0)
-cmake_policy(SET CMP0016 NEW)
+cmake_minimum_required(VERSION 3.24)
+project(ivzond)
 
-project(parallel_executor VERSION 1.0.0 DESCRIPTION "Синхронизация нескольких потоков исполнения через очередь сообщений на C++")
+set(CMAKE_CXX_STANDARD 14)
 
-include_directories(${CMAKE_SOURCE_DIR}/src)
+include_directories(.)
 
-enable_testing()
-add_subdirectory(test)
+add_executable(ivzond
+        DataEvent.cpp
+        DataEvent.h
+        Device.h
+        DeviceA.cpp
+        DeviceA.h
+        DeviceB.cpp
+        DeviceB.h
+        DeviceEvent.cpp
+        DeviceEvent.h
+        Event.h
+        EventQueue.cpp
+        EventQueue.h
+        main.cpp
+        Parser.cpp
+        Parser.h
+        StartedEvent.cpp
+        StartedEvent.h
+        WorkDoneEvent.cpp
+        WorkDoneEvent.h)

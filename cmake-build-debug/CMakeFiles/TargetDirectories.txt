@@ -1,3 +1,0 @@
-/Users/m.besogonov/CLionProjects/ivzond/cmake-build-debug/CMakeFiles/ivzond.dir
-/Users/m.besogonov/CLionProjects/ivzond/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/m.besogonov/CLionProjects/ivzond/cmake-build-debug/CMakeFiles/rebuild_cache.dir

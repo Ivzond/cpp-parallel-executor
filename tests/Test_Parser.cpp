@@ -1,9 +1,9 @@
-#include "EventQueue.h"
+#include "src/EventQueue.h"
 
-#include "DeviceA.h"
-#include "DeviceB.h"
+#include "src/DeviceA.h"
+#include "src/DeviceB.h"
 
-#include "Parser.h"
+#include "src/Parser.h"
 
 #include <gtest/gtest.h>
 

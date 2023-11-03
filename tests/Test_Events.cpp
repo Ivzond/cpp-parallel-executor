@@ -1,9 +1,9 @@
-#include "StartedEvent.h"
-#include "DataEvent.h"
-#include "WorkDoneEvent.h"
+#include "src/StartedEvent.h"
+#include "src/DataEvent.h"
+#include "src/WorkDoneEvent.h"
 
-#include "DeviceA.h"
-#include "DeviceB.h"
+#include "src/DeviceA.h"
+#include "src/DeviceB.h"
 
 #include <gtest/gtest.h>
 

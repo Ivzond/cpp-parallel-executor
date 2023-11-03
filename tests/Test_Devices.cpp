@@ -1,5 +1,5 @@
-#include "DeviceA.h"
-#include "DeviceB.h"
+#include "src/DeviceA.h"
+#include "src/DeviceB.h"
 
 #include <gtest/gtest.h>
 

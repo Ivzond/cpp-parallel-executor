@@ -10,7 +10,7 @@ class DeviceEvent : public Event
 {
 public:
     // Constructor to fill info about device
-    DeviceEvent(std::shared_ptr<Device> device);
+    explicit DeviceEvent(std::shared_ptr<Device> device);
 protected:
     std::shared_ptr<Device> device;
 };

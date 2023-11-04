@@ -2,7 +2,7 @@
 #include <cstdlib> // For generating random integers
 
 std::string DeviceB::getName() {
-    return "Device B";
+    return "B";
 }
 std::string DeviceB::getDataAsString() {
     std::string data = std::to_string(rand() % 199) + " " +

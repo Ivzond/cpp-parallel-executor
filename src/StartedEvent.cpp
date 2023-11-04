@@ -1,8 +1,10 @@
 #include "StartedEvent.h"
 
+#include <utility>
+
 StartedEvent::StartedEvent(std::shared_ptr<Device> device)
-: DeviceEvent(device) {}
+: DeviceEvent(std::move(device)) {}
 
 std::string StartedEvent::toString() const {
-    return device->getName() + " started working.";
+    return "Started " + device->getName();
 }

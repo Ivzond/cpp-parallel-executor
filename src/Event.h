@@ -6,7 +6,7 @@
 class Event
 {
 public:
-    virtual ~Event() {}
+    virtual ~Event() = default;
     // Returns string message, related to Event
     virtual std::string toString() const = 0;
 };

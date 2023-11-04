@@ -6,7 +6,7 @@
 class Device
 {
 public:
-    virtual ~Device() {}
+    virtual ~Device() = default;
     // Returns device name
     virtual std::string getName() = 0;
     /* Simulates data reading

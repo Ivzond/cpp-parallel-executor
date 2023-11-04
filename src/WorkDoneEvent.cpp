@@ -1,8 +1,10 @@
 #include "WorkDoneEvent.h"
 
+#include <utility>
+
 WorkDoneEvent::WorkDoneEvent(std::shared_ptr<Device> device)
-: DeviceEvent(device) {}
+: DeviceEvent(std::move(device)) {}
 
 std::string WorkDoneEvent::toString() const {
-    return device->getName() + " completed its work.";
+    return "Finished " + device->getName();
 }

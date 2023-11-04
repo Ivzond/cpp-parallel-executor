@@ -2,7 +2,7 @@
 #include <cstdlib> // For generating random data length
 
 std::string DeviceA::getName() {
-    return "Device A";
+    return "A";
 }
 
 std::string DeviceA::getDataAsString() {

@@ -6,7 +6,5 @@ DataEvent::DataEvent(std::shared_ptr<Device> device)
 : DeviceEvent(std::move(device)) {}
 
 std::string DataEvent::toString() const {
-    return "Data Event from " +
-    device->getName() + ": " +
-    device->getDataAsString();
+    return device->getDataAsString() + " from " + device->getName();
 }

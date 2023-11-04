@@ -6,11 +6,14 @@
 
 // Strange, but include iostream supposed to be here(watch read-function, first "if")
 #include <iostream>
+#include <utility>
 
 Parser::Parser(std::shared_ptr<EventQueue> queue,
-std::shared_ptr<Device> DeviceA,
-std::shared_ptr<Device> DeviceB)
-: queue(queue), DeviceA(DeviceA), DeviceB(DeviceB) {}
+               std::shared_ptr<Device> DeviceA,
+               std::shared_ptr<Device> DeviceB)
+               : queue(std::move(queue)),
+               DeviceA(std::move(DeviceA)),
+               DeviceB(std::move(DeviceB)) {}
 
 void Parser::read(std::shared_ptr<Device> device,
 std::chrono::seconds sleep_duration,

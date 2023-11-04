@@ -1,8 +1,9 @@
 #include "DataEvent.h"
 #include <iostream>
+#include <utility>
 
 DataEvent::DataEvent(std::shared_ptr<Device> device)
-: DeviceEvent(device) {}
+: DeviceEvent(std::move(device)) {}
 
 std::string DataEvent::toString() const {
     return "Data Event from " +

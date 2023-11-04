@@ -16,7 +16,7 @@ public:
     std::shared_ptr<Device> DeviceA,
     std::shared_ptr<Device> DeviceB);
 
-   /* Function, whis starts reading data from devices in parallel mode
+   /* Function, which starts reading data from devices in parallel mode
     * param loop_count_A - unsigned, which specifies a number of iterations of Data Reading from Device A
     * param loop_count_B - unsigned, which specifies a number of iterations of Data Reading from Device B
     * param crush_index_A - integer, which shows number of iteration, when Device A will stop working

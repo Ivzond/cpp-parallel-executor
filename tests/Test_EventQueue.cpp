@@ -82,7 +82,6 @@ TEST(EventQueue, EmptyQueueTest)
 }
 
 TEST(EventQueue, TimeoutTest)
-// Что проверяет этот тест?
 {
   std::shared_ptr<EventQueue> queue = std::make_shared<EventQueue>();
   std::shared_ptr<Device> device = std::make_shared<DeviceA>();
@@ -93,7 +92,6 @@ TEST(EventQueue, TimeoutTest)
 
   queue->push(std::move(std::make_shared<StartedEvent>(device)));
   if (thread.joinable())
-// Для чего эта проверка на joinable?
     thread.join();
 
   ASSERT_NE(event, nullptr);
@@ -121,14 +119,12 @@ TEST(EventQueue, ThreadSafeTest)
 
   for (auto &t : threads)
     if (t.joinable())
-// Это думаю не нужно
       t.join();
 
   size_t num_started_events = 0;
   size_t num_work_done_events = 0;
   std::shared_ptr<const Event> e;
   while ((e = queue->pop(std::chrono::seconds(1))) != nullptr)
-// лучше pop делать параллельно с push в отдельном потоке - так будет более честный тест
     if (dynamic_cast<const StartedEvent *>(e.get()))
       num_started_events += 1;
     else if (dynamic_cast<const WorkDoneEvent *>(e.get()))

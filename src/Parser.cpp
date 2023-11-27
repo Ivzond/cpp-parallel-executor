@@ -17,10 +17,10 @@ Parser::Parser(std::shared_ptr<EventQueue> queue,
 
 void Parser::read(std::shared_ptr<Device> device,
 std::chrono::seconds sleep_duration,
-size_t loop_count, int crush_index) {
-    for (size_t i = 0; i != loop_count; ++i) {
+int loop_count, int crush_index) {
+    for (int i = 0; i != loop_count; ++i) {
         // Check if the device should stop working
-        if (i == static_cast<size_t>(crush_index)) {
+        if (i == crush_index) {
             queue->push(std::make_shared<WorkDoneEvent>(device));
             return;
         }
@@ -39,7 +39,7 @@ size_t loop_count, int crush_index) {
     queue->push(std::make_shared<WorkDoneEvent>(device));
 }
 
-void Parser::run(size_t loop_count_A, size_t loop_count_B,
+void Parser::run(int loop_count_A, int loop_count_B,
 int crush_index_A, int crush_index_B) {
     queue->push(std::make_shared<StartedEvent>(DeviceA));
     queue->push(std::make_shared<StartedEvent>(DeviceB));

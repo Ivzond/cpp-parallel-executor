@@ -22,7 +22,7 @@ public:
     * param crush_index_A - integer, which shows number of iteration, when Device A will stop working
     * param crush_index_B - integer, which shows number of iteration, when Device B will stop working
     */
-    void run(size_t loop_count_A, size_t loop_count_B,
+    void run(int loop_count_A, int loop_count_B,
     int crush_index_A = -1, int crush_index_B = -1);
 
 private:
@@ -33,7 +33,7 @@ private:
     * param crush_index - integer, which shows number of iteration, when Device will stop working
     */
     void read(std::shared_ptr<Device> device, std::chrono::seconds sleep_duration,
-    size_t loop_count, int crush_index);
+              int loop_count, int crush_index);
 
 private:
     std::shared_ptr<EventQueue> queue;

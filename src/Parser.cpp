@@ -16,8 +16,8 @@ Parser::Parser(std::shared_ptr<EventQueue> queue,
                DeviceB(std::move(DeviceB)) {}
 
 void Parser::read(std::shared_ptr<Device> device,
-std::chrono::seconds sleep_duration,
-int loop_count, int crush_index) {
+                  std::chrono::seconds sleep_duration,
+                  int loop_count, int crush_index) {
     for (int i = 0; i != loop_count; ++i) {
         // Check if the device should stop working
         if (i == crush_index) {
@@ -40,7 +40,7 @@ int loop_count, int crush_index) {
 }
 
 void Parser::run(int loop_count_A, int loop_count_B,
-int crush_index_A, int crush_index_B) {
+                 int crush_index_A, int crush_index_B) {
     queue->push(std::make_shared<StartedEvent>(DeviceA));
     queue->push(std::make_shared<StartedEvent>(DeviceB));
 

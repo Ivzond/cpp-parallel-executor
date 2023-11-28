@@ -49,4 +49,10 @@ int crush_index_A, int crush_index_B) {
 
     threadA.join();
     threadB.join();
+
+    // Prints events from the queue
+    std::shared_ptr<const Event> event;
+    while ((event = queue->pop(std::chrono::seconds(0))) != nullptr) {
+        std::cout << event->to_string() << std::endl;
+    }
 }

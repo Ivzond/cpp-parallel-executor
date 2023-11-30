@@ -4,7 +4,6 @@
 #include "DataEvent.h"
 #include <thread>
 
-// Strange, but include iostream supposed to be here(watch read-function, first "if")
 #include <iostream>
 #include <utility>
 
@@ -49,4 +48,9 @@ void Parser::run(int loop_count_A, int loop_count_B,
 
     threadA.join();
     threadB.join();
+
+    // Print events from the queue
+    std::shared_ptr<const Event> event;
+    while ((event = queue->pop(std::chrono::seconds(0))) != nullptr) 
+        std::cout << event->to_string() << std::endl;
 }

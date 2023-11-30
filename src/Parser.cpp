@@ -12,7 +12,11 @@ Parser::Parser(std::shared_ptr<EventQueue> queue,
                std::shared_ptr<Device> DeviceB)
                : queue(std::move(queue)),
                DeviceA(std::move(DeviceA)),
-               DeviceB(std::move(DeviceB)) {}
+               DeviceB(std::move(DeviceB)) {
+    if (!this->queue || !this->DeviceA || !this->DeviceB) {
+        throw std::runtime_error("Invalid arguments");
+    }
+}
 
 void Parser::read(std::shared_ptr<Device> device,
                   std::chrono::seconds sleep_duration,

@@ -52,5 +52,5 @@ void Parser::run(int loop_count_A, int loop_count_B,
     // Print events from the queue
     std::shared_ptr<const Event> event;
     while ((event = queue->pop(std::chrono::seconds(0))) != nullptr) 
-        std::cout << event->to_string() << std::endl;
+        std::cout << event->toString() << std::endl;
 }

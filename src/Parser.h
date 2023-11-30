@@ -13,8 +13,8 @@ public:
     * param DeviceB - smart-pointer to the Device B
     */
     Parser(std::shared_ptr<EventQueue> queue,
-    std::shared_ptr<Device> DeviceA,
-    std::shared_ptr<Device> DeviceB);
+           std::shared_ptr<Device> DeviceA,
+           std::shared_ptr<Device> DeviceB);
 
    /* Function, which starts reading data from devices in parallel mode
     * param loop_count_A - unsigned, which specifies a number of iterations of Data Reading from Device A
@@ -23,7 +23,7 @@ public:
     * param crush_index_B - integer, which shows number of iteration, when Device B will stop working
     */
     void run(int loop_count_A, int loop_count_B,
-    int crush_index_A = -1, int crush_index_B = -1);
+             int crush_index_A = -1, int crush_index_B = -1);
 
 private:
    /* Function reads data from device

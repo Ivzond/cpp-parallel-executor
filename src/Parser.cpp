@@ -12,7 +12,11 @@ Parser::Parser(std::shared_ptr<EventQueue> queue,
                std::shared_ptr<Device> DeviceB)
                : queue(std::move(queue)),
                DeviceA(std::move(DeviceA)),
-               DeviceB(std::move(DeviceB)) {}
+               DeviceB(std::move(DeviceB)) {
+    if (!this->queue || !this->DeviceA || !this->DeviceB) {
+        throw std::runtime_error("Invalid arguments");
+    }
+}
 
 void Parser::read(std::shared_ptr<Device> device,
                   std::chrono::seconds sleep_duration,
@@ -20,7 +24,6 @@ void Parser::read(std::shared_ptr<Device> device,
     for (int i = 0; i != loop_count; ++i) {
         // Check if the device should stop working
         if (i == crush_index) {
-            queue->push(std::make_shared<WorkDoneEvent>(device));
             return;
         }
 
@@ -52,5 +55,5 @@ void Parser::run(int loop_count_A, int loop_count_B,
     // Print events from the queue
     std::shared_ptr<const Event> event;
     while ((event = queue->pop(std::chrono::seconds(0))) != nullptr) 
-        std::cout << event->to_string() << std::endl;
+        std::cout << event->toString() << std::endl;
 }

@@ -20,7 +20,6 @@ void Parser::read(std::shared_ptr<Device> device,
     for (int i = 0; i != loop_count; ++i) {
         // Check if the device should stop working
         if (i == crush_index) {
-            queue->push(std::make_shared<WorkDoneEvent>(device));
             return;
         }
 

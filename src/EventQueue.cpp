@@ -1,14 +1,14 @@
 #include "EventQueue.h"
 
 void EventQueue::push(const std::shared_ptr<const Event>& event) {
-    std::unique_lock<std::mutex> lock(mutex);
+    std::lock_guard<std::mutex> lock(mutex);
     queue.push(event);
     condition_variable.notify_one();
 }
 
 std::shared_ptr<const Event> EventQueue::pop(const std::chrono::seconds& duration) {
     std::unique_lock<std::mutex> lock(mutex);
-    if (queue.empty()) {
+    while (queue.empty()) {
         condition_variable.wait_for(lock, duration);
     }
     if (!queue.empty()) {

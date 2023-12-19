@@ -28,13 +28,13 @@ void Parser::read(std::shared_ptr<Device> device,
         }
 
         std::this_thread::sleep_for(sleep_duration);
-        std::shared_ptr<const Event> event;
+        std::shared_ptr<const Event> event = std::make_shared<DataEvent>(device);
 
-        if (device == DeviceA) {
-            event = std::make_shared<DataEvent>(DeviceA);
-        } else if (device == DeviceB) {
-            event = std::make_shared<DataEvent>(DeviceB);
-        }
+        // if (device == DeviceA) {
+        //     event = std::make_shared<DataEvent>(DeviceA);
+        // } else if (device == DeviceB) {
+        //     event = std::make_shared<DataEvent>(DeviceB);
+        // }
 
         queue->push(event);
     }

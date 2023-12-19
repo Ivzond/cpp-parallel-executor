@@ -6,8 +6,7 @@
 class WorkDoneEvent : public DeviceEvent
 {
 public:
-    explicit WorkDoneEvent(std::shared_ptr<Device> device);
-
+    using DeviceEvent::DeviceEvent;
     std::string toString() const override;
 };
 
